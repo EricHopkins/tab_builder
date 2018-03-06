@@ -3,6 +3,7 @@
  */
 
 @import "compass/css3/border-radius";
+@import "compass/css3/inline-block";
 
 $tab_color: #EEE;
 $current_tab_color: #006EB6;
@@ -21,10 +22,12 @@ $current_tab_color: #006EB6;
     padding: 0;
     margin: 0;
     vertical-align: middle;
+    white-space: nowrap;
 
     li.tab
     {
-      float: left;
+      @include inline-block;
+
       padding: 0;
       margin: 0;
       min-height: 30px;
@@ -43,7 +46,7 @@ $current_tab_color: #006EB6;
       a, a:hover, span
       {
         text-decoration: none;
-        display: block;
+        display: inline-block;
         padding: 5px 5px 5px 5px;
         color: #000000;
       }
@@ -92,6 +95,7 @@ $current_tab_color: #006EB6;
         background-color: #FFF;
         font-size: 8pt;
         color: #444;
+        margin-right: 4px;
         @include border-radius(4px);
       }
 
@@ -116,9 +120,4 @@ $current_tab_color: #006EB6;
       }
     }
   }
-}
-
-.tab-content
-{
-  padding-top: 15px;
 }
